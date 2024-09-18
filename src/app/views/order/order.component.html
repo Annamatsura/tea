@@ -1,0 +1,119 @@
+<div class="container text-center mt-5 pt-4 order-form" *ngIf="formDiv">
+  <h2 class="fw-bold">Сделать заказ</h2>
+  <div class="col-lg-6 m-auto" [formGroup]="signInForm" (ngSubmit)="createOrder()">
+
+    <div class="row">
+      <div class="col-lg-12 mb-3">
+        <div class="text-start fw-normal">Товар</div>
+        <input type="text" class="form-control"
+               formControlName="product"
+               aria-label="Адрес" id="product">
+      </div>
+      <div class="col-lg-12 mb-3" *ngIf="product?.invalid && (product?.dirty || product?.touched)">
+        <div class="text-danger" >
+          Продукт введен неверно
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 mb-3">
+        <div class="text-start fw-normal">Имя</div>
+        <input type="text" class="form-control"
+               formControlName="name"
+               aria-label="Имя" id="name">
+        <div class="w-100 mb-3" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+          <div class="text-danger" >
+            Имя введено неверно
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="text-start fw-normal">Фамилия</div>
+        <input type="text" class="form-control"
+               formControlName="surname"
+               aria-label="Фамилия" id="surname">
+        <div class="w-100 mb-3" *ngIf="surname?.invalid && (surname?.dirty || surname?.touched)">
+          <div class="text-danger" >
+            Фамилия введена неверно
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-3">
+        <div class="text-start fw-normal">Телефон</div>
+        <input type="tel" class="form-control"
+               formControlName="phone"
+               aria-label="Телефон" id="phone">
+        <div class="w-100 mb-3" *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)">
+          <div class="text-danger" >
+            Телефон введен неверно
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 mb-3">
+        <div class="text-start fw-normal">Страна</div>
+        <input type="text" class="form-control"
+               formControlName="country"
+               aria-label="Страна" id="country">
+        <div class="w-100 mb-3" *ngIf="country?.invalid && (country?.dirty || country?.touched)">
+          <div class="text-danger" >
+            Страна введена неверно
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col-lg-6 mb-3">
+        <div class="text-start fw-normal">Индекс</div>
+        <input type="text" class="form-control"
+               formControlName="zip"
+               aria-label="Индекс" id="index">
+        <div class="w-100 mb-3" *ngIf="zip?.invalid && (zip?.dirty || zip?.touched)">
+          <div class="text-danger" >
+            Индекс введен неверно
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-12 mb-3">
+        <div class="text-start fw-normal">Адрес</div>
+        <input type="text" class="form-control"
+               formControlName="address"
+               aria-label="Адрес" >
+      </div>
+
+      <div class="col-lg-12 mb-3" *ngIf="address?.invalid && (address?.dirty || address?.touched)">
+        <div class="text-danger" >
+          Адрес введен неверно
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 mb-3">
+        <div class="text-start fw-normal">Комментарий к заказу</div>
+        <input type="text" class="form-control"
+               formControlName="comment"
+               aria-label="Адрес" id="comment">
+      </div>
+    </div>
+    <div class="text-start">
+      <button class="btn btn-primary w-100 mt-4" id="form-submit" [disabled]="signInForm.invalid || signInForm.disabled">Отправить</button>
+    </div>
+  </div>
+</div>
+
+<div class=" fs-2 fw-bold container text-center mt-5 pt-4" *ngIf="thanksDiv">
+  Спасибо за заказ!
+</div>
+
+<div class=" fs-2 fw-bold container text-center mt-5 pt-4 text-danger" *ngIf="errorDiv">
+  Произошла ошибка, проверьте форму и попробуйте еще раз.
+</div>

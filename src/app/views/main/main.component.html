@@ -1,0 +1,73 @@
+<div class="container mt-5 pt-4">
+  <div class="slide ">
+    <div class="slide-image ">
+      <a class="slide-image1">
+        <img src="../../../assets/images/slide1.png" alt="Слайд 1" height="640" width="1320">
+      </a>
+    </div>
+    <div class="slide-info slide-info-1">
+      <h1 class="fs-1 fw-bold">Скидки на травяные чаи</h1>
+      <p class="fs-6 fw-normal">Узнай все подробности, заполнив заявку</p>
+      <div class="slide-button">
+        <button type="button" class="btn btn-primary">Заполнить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container text-center mt-5 pt-4">
+  <h2 class="fw-bold">Ответы на часто задаваемые вопросы</h2>
+
+  <div class="col-lg-8 m-auto">
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel=0">
+      <ngb-panel title="Собираете ли вы подарочные боксы?">
+        <ng-template ngbPanelContent>
+          Да, у нас есть такая услуга. Мы можем собрать подарочный бокс на любой вкус, объем и стоимость!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Сколько у вас разновидностей чая?">
+        <ng-template ngbPanelContent>
+          На данный момент у нас имеется 6 чайных коллекций, все они представлены у нас на сайте
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="В какой срок осуществляется доставка?">
+        <ng-template ngbPanelContent>
+          Все зависит от адреса доставки
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="У вас обновляется ассортимент?">
+        <ng-template ngbPanelContent>
+          Разумеется, все изменения будут так же представлены на нашем сайте!
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel title="Какого объема у вас пачки чая?">
+        <ng-template ngbPanelContent>
+          Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+          et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+          faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+          mauris vel est.
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+</div>
+
+<div class="modal-bg" *ngIf="modal">
+  <div class="modall">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Посмотрите наши чайные коллекции</h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" routerLink="/catalog" class="btn btn-primary">Смотреть</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
